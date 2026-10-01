@@ -1,0 +1,16 @@
+allow vendor_hisi_init bootloader_prop:property_service { set };
+allow vendor_hisi_init config_prop:property_service { set };
+allow vendor_hisi_init default_prop:property_service { set };
+allow vendor_hisi_init init:unix_stream_socket { connectto };
+allow vendor_hisi_init nve_block_device:blk_file { getattr open read };
+allow vendor_hisi_init proc:file { getattr open read };
+allow vendor_hisi_init proc_cmdline:file { getattr open read };
+allow vendor_hisi_init property_socket:sock_file { write };
+allow vendor_hisi_init radio_prop:property_service { set };
+allow vendor_hisi_init sysfs:file { getattr open read };
+allow vendor_hisi_init system_prop:property_service { set };
+allow vendor_hisi_init telephony_config_prop:property_service { set };
+allow vendor_hisi_init vendor_bt_data_file:dir { search };
+allow vendor_hisi_init vendor_bt_data_file:file { getattr open write };
+allow vendor_hisi_init vendor_hisi_init:capability { dac_override };
+allow vendor_hisi_init wifi_vendor_data_file:file { getattr open write };

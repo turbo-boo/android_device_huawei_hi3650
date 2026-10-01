@@ -1,0 +1,6 @@
+allow oeminfo_nvm device:chr_file { ioctl open read write };
+allow oeminfo_nvm device:dir { add_name create setattr write };
+allow oeminfo_nvm device:file { create open setattr write };
+allow oeminfo_nvm oeminfo_nvm:capability { chown fowner fsetid };
+allow oeminfo_nvm socket_device:dir { add_name write };
+allow oeminfo_nvm socket_device:sock_file { create setattr };

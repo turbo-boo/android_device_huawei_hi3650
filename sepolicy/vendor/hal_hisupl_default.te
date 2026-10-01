@@ -1,0 +1,1 @@
+allow hal_hisupl_default hi110x_data_file:sock_file { write };

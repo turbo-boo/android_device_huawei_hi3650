@@ -1,0 +1,2 @@
+allow installd modem_file:filesystem { quotaget };
+allow installd teecd_data_file:filesystem { quotaget };

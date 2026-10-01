@@ -1,0 +1,2 @@
+# Loaded into apps, SurfaceFlinger and system_server through the vendor graphics stack.
+/(vendor|system/vendor)/lib(64)?/libhwlog\.so    u:object_r:same_process_hal_file:s0

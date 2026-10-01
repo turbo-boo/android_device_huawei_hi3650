@@ -1,0 +1,26 @@
+add_service(hal_camera_default, hal_camera_cfgsvr_vndservice)
+allow hal_camera_default default_prop:file { getattr open read };
+allow hal_camera_default default_prop:property_service { set };
+allow hal_camera_default device:chr_file { getattr ioctl open read write };
+allow hal_camera_default device:dir { remove_name write };
+allow hal_camera_default device:file { getattr open read unlink };
+allow hal_camera_default hal_camera_default:binder { call transfer };
+allow hal_camera_default hal_graphics_allocator_default:binder { call };
+allow hal_camera_default hal_graphics_allocator_hwservice:hwservice_manager { find };
+allow hal_camera_default hal_graphics_allocator_service:service_manager { find };
+allow hal_camera_default hal_graphics_composer_default:binder { call transfer };
+allow hal_camera_default hal_graphics_composer_hwservice:hwservice_manager { find };
+allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager { find };
+allow hal_camera_default hal_perfgenius_hwservice:hwservice_manager { find };
+allow hal_camera_default init:unix_stream_socket { connectto };
+allow hal_camera_default oeminfo_nvm:unix_stream_socket { connectto };
+allow hal_camera_default proc:file { getattr open read };
+allow hal_camera_default proc_meminfo:file { open read };
+allow hal_camera_default property_socket:sock_file { write };
+allow hal_camera_default socket_device:sock_file { write };
+allow hal_camera_default sysfs_pg:file { getattr open read };
+allow hal_camera_default system_data_file:dir { add_name getattr open read remove_name search write };
+allow hal_camera_default system_data_file:file { create getattr open read setattr unlink write };
+allow hal_camera_default system_server:binder { call transfer };
+allow hal_camera_default vndbinder_device:chr_file { ioctl open read write };
+allow hal_camera_default vndservicemanager:binder { call transfer };

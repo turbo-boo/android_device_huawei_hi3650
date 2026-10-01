@@ -1,0 +1,10 @@
+allow kernel device:chr_file { create getattr open setattr unlink write };
+allow kernel device:dir { add_name remove_name rmdir write };
+allow kernel isp_vendor_file:file { open };
+allow kernel kernel:capability { chown mknod };
+allow kernel nve_block_device:blk_file { open read write };
+allow kernel proc:file { open };
+allow kernel sepolicy_file:file { getattr };
+allow kernel sysfs:file { open };
+allow kernel vendor_log_file:dir { getattr open read setattr };
+allow kernel vendor_log_file:file { append getattr open setattr };

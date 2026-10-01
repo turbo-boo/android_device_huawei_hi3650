@@ -1,0 +1,14 @@
+allow tee default_prop:file { getattr open read };
+allow tee default_prop:property_service { set };
+allow tee hal_fingerprint_default:dir { search };
+allow tee hal_fingerprint_default:file { getattr open read };
+allow tee hal_gatekeeper_default:dir { search };
+allow tee hal_gatekeeper_default:file { getattr open read };
+allow tee init:unix_stream_socket { connectto };
+allow tee property_socket:sock_file { write };
+allow tee rootfs:file { getattr open read };
+allow tee system_prop:file { getattr open read };
+allow tee tee:capability { chown fowner };
+allow tee teecd_data_file:dir { search };
+allow tee teecd_data_file:file { getattr open read setattr write };
+allow tee teecd_device:chr_file { ioctl open read write };

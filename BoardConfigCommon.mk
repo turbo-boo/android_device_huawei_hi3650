@@ -149,6 +149,10 @@ BOARD_USES_FULL_RECOVERY_IMAGE := true
 
 # Sepolicy
 include device/huawei/compat/sepolicy/SEPolicy.mk
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+# The EMUI vendor blobs set and read platform properties and write legacy
+# /data paths, which the Treble neverallows forbid. Only valid for userdebug.
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Vendor Init
 TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):init_hisi

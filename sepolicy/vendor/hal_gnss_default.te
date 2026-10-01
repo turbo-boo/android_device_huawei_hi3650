@@ -1,0 +1,2 @@
+allow hal_gnss_default hi110x_daemon:unix_stream_socket { connectto };
+allow hal_gnss_default hi110x_data_file:sock_file { write };

@@ -1,0 +1,8 @@
+allow hal_audio_default config_prop:file { getattr open read };
+allow hal_audio_default default_prop:file { getattr open read };
+allow hal_audio_default device:chr_file { ioctl open read write };
+allow hal_audio_default hal_audio_default:netlink_kobject_uevent_socket { bind create read setopt };
+allow hal_audio_default sysfs:file { getattr open read };
+allow hal_audio_default system_file:file { getattr open read };
+allow hal_audio_default system_prop:file { getattr open read };
+wakelock_use(hal_audio_default)

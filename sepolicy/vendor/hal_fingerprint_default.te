@@ -1,0 +1,8 @@
+allow hal_fingerprint_default default_prop:file { getattr open read };
+allow hal_fingerprint_default fingerprintd_data_file:dir { write };
+allow hal_fingerprint_default fps_device:chr_file { ioctl open read write };
+allow hal_fingerprint_default splash_data_file:dir { search };
+allow hal_fingerprint_default sysfs:file { write };
+allow hal_fingerprint_default tee:fd { use };
+allow hal_fingerprint_default tee:unix_stream_socket { connectto };
+allow hal_fingerprint_default teecd_device:chr_file { ioctl read write };

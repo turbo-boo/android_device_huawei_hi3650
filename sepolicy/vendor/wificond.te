@@ -1,0 +1,2 @@
+allow wificond hi110x_data_file:lnk_file { read };
+allow wificond hi110x_vendor_file:file { open read };
