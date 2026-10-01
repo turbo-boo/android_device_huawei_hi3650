@@ -30,7 +30,7 @@ ro.charger.enable_suspend=true
 
 # Configstore
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-ro.surface_flinger.running_without_sync_framework=true
+ro.surface_flinger.running_without_sync_framework=false
 
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
