@@ -41,6 +41,8 @@ void load_variants() {
         	set_ro_build_prop("model", "BTV-DL09", true);
         else if (model_info.find("BTV_W09") != string::npos)
         	set_ro_build_prop("model", "BTV-W09", true);
+        else if (model_info.find("BTV_L0J") != string::npos)
+        	set_ro_build_prop("model", "BTV-L0J", true);
     } else {
         LOG(ERROR) << "Unable to parse model information!";
     }
