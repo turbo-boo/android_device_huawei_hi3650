@@ -5,7 +5,10 @@
 //
 
 cc_library_shared {
-    name: "libhwlog",
+    // device/huawei/compat also defines "libhwlog"; this hi3650 variant
+    // carries the extra shims the vendor blobs need.
+    name: "libhwlog.hi3650",
+    stem: "libhwlog",
     proprietary: true,
     defaults: ["hidl_defaults"],
     srcs: [

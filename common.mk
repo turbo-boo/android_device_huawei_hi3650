@@ -205,7 +205,7 @@ PRODUCT_PACKAGES += \
     
 # Misc
 PRODUCT_PACKAGES += \
-    libhwlog
+    libhwlog.hi3650
     
 # Overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
