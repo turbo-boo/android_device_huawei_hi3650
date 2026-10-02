@@ -119,8 +119,13 @@ void xcollie_init() {
     ALOGV("%s: called", __func__);
 }
 
-void __hi_log_print(int param1, char* param2, char* param3, int param4) {
-    ALOGV("%s: param1: %d, param2: %s, param3: %s, param4: %d", __func__, param1, param2, param3, param4);
+// Huawei vendor blobs log through this: (android prio, module, tag, fmt, ...).
+int __hi_log_print(int prio, const char* module __unused, const char* tag, const char* fmt, ...) {
+    va_list ap;
+    va_start(ap, fmt);
+    int ret = __android_log_vprint(prio, tag, fmt, ap);
+    va_end(ap);
+    return ret;
 }
 
 int32_t __chr_exception(uint32_t errno) {
