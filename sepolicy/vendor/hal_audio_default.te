@@ -6,3 +6,5 @@ allow hal_audio_default sysfs:file { getattr open read };
 allow hal_audio_default system_file:file { getattr open read };
 allow hal_audio_default system_prop:file { getattr open read };
 wakelock_use(hal_audio_default)
+# sets hifi.watchdog.come=true to have init restart audioserver
+set_prop(hal_audio_default, vendor_hw_audio_prop)

@@ -13,10 +13,6 @@ on property:ro.runmode=factory
     chown system system /sys/bus/platform/drivers/huawei,ald2/test_ocram
     chmod 664 /sys/bus/platform/drivers/huawei,ald2/test_ocram
     
-on property:init.svc.imonitor=running
-    chown root system /data/log/jank
-    chown root system /data/log/jank/log
-    
 on property:dev.bootcomplete=1
     write /proc/balong/stats/boot_time 1
     

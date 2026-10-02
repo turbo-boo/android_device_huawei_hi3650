@@ -17,3 +17,6 @@ allow vendor_init system_data_file:file { setattr };
 allow vendor_init system_prop:file { read };
 allow vendor_init modem_secure_device:blk_file { open read };
 get_prop(vendor_init, vendor_oem_prop)
+set_prop(vendor_init, vendor_hw_audio_prop)
+set_prop(vendor_init, vendor_hw_camera_prop)
+set_prop(vendor_init, vendor_tee_prop)

@@ -1,0 +1,8 @@
+# Platform-namespaced names the Huawei blobs read and vendor rc sets.
+camera.dis.flag                  u:object_r:vendor_hw_camera_prop:s0
+camera.tnr.flag                  u:object_r:vendor_hw_camera_prop:s0
+hifi.watchdog.come               u:object_r:vendor_hw_audio_prop:s0
+ro.config.default_commril_mode   u:object_r:vendor_radio_prop:s0
+ro.config.hw_lte_support         u:object_r:vendor_radio_prop:s0
+ro.config.is_start_commril       u:object_r:vendor_radio_prop:s0
+sys.userdata_is_ready            u:object_r:vendor_tee_prop:s0

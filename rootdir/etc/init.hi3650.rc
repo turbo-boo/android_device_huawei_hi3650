@@ -161,19 +161,12 @@ on post-fs-data
     
     setprop sys.userdata_is_ready 1
     setprop init.svc.console stopped
-    setprop persist.sys.kmemleak.debug 0
     setprop vold.post_fs_data_done 1
 
 on early-boot
     chown system system /proc/portcfg
     chown system system /proc/getslice
     chown media media /sys/class/graphics/fb0/effect_ce
-
-    setprop viatel.device.fls  spi.2.ttySPI
-    setprop viatel.device.at   spi.10.ttySPI
-    setprop viatel.device.data spi.0.ttySPI
-    setprop viatel.device.pcv spi.4.ttySPI
-    setprop viatel.device.gps spi.5.ttySPI
     
     chmod  0660  /sys/devices/platform/amba/ffd73000.i2c/i2c-0/0-0024/fixture_debug
     chown system  system  /sys/devices/platform/amba/ffd73000.i2c/i2c-0/0-0024/fixture_debug

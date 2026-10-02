@@ -12,3 +12,4 @@ allow tee tee:capability { chown fowner };
 allow tee teecd_data_file:dir { search };
 allow tee teecd_data_file:file { getattr open read setattr write };
 allow tee teecd_device:chr_file { ioctl open read write };
+get_prop(tee, vendor_tee_prop)
