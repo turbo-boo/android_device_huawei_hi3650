@@ -251,11 +251,9 @@ on property:sys.boot_completed=1
     write /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost_freq 650000000
     write /sys/class/devfreq/gpufreq/mali_ondemand/hispeed_freq 650000000
     
-    # Set lowmemorykiller tuning parameters
+    # lmkd sets adj/minfree from ActivityManager
+    # (config_lowMemoryKillerMinFreeKbytesAbsolute)
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 0
-    write /sys/module/lowmemorykiller/parameters/adj "0,100,200,300,900,906"
-    write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,27648,32256,55296,80640"
-    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 80640
 
     write /proc/sys/kernel/sched_util_clamp_min 128
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 96

@@ -154,4 +154,11 @@
          * The device must be provisioned with HDCP keys (for protected content).
     -->
     <bool name="config_enableWifiDisplay">true</bool>
+
+    <!-- Minfree for the cached-app level of the in-kernel lowmemorykiller.
+         The AOSP default (~325MB) is sized for PSI-driven lmkd; with the
+         4.4 in-kernel LMK it kills every cached app as soon as page cache
+         dips under it, long before zram is used. Lower levels scale down
+         proportionally. -->
+    <integer name="config_lowMemoryKillerMinFreeKbytesAbsolute">184320</integer>
 </resources>
