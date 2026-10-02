@@ -120,7 +120,9 @@ on post-fs-data
     mkdir /data/log 0775 system system
     restorecon_recursive /data/log
 
-    mkdir /data/hisi_logs 0770 system system
+    # The kernel blackbox (rdr) writes here from a kernel thread that has no
+    # fscrypt key, so the directory must stay unencrypted.
+    mkdir /data/hisi_logs 0770 system system encryption=None
     restorecon_recursive /data/hisi_logs
 
     mkdir /data/log/press10 0770 system system
