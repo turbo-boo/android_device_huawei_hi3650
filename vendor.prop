@@ -37,6 +37,11 @@ ro.surface_flinger.running_without_sync_framework=false
 
 # Dex2oat
 dalvik.vm.dex2oat64.enabled=true
+# 2.7GB RAM: 4-thread dex2oat of GmsCore saturates the little cluster and
+# pushes ~300MB into zram; boot-time compilation keeps the default.
+dalvik.vm.dex2oat-threads=2
+dalvik.vm.background-dex2oat-threads=2
+dalvik.vm.restore-dex2oat-threads=2
 
 # Display
 ro.opengles.version=196610
