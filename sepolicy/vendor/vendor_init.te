@@ -20,3 +20,7 @@ get_prop(vendor_init, vendor_oem_prop)
 set_prop(vendor_init, vendor_hw_audio_prop)
 set_prop(vendor_init, vendor_hw_camera_prop)
 set_prop(vendor_init, vendor_tee_prop)
+# fscrypt policy on /data/hisi_logs (compat makes hisi_log_file a
+# core_data_file_type, which the platform's dir ioctl grant excludes);
+# the platform allowxperm limits this to GET/SET_ENCRYPTION_POLICY
+allow vendor_init hisi_log_file:dir ioctl;

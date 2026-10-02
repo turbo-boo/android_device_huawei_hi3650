@@ -223,9 +223,6 @@ on boot
     write /sys/kernel/debug/kmemleak scan=14400
     chown radio radio /proc/modemstatus
     
-    chown root radio /proc/cmdline
-    chmod 0666 /proc/cmdline
-    
     chown system system /sys/devices/platform/fingerprint/irq
     chmod 0660 /sys/devices/platform/fingerprint/irq
     chown system system /sys/devices/platform/fingerprint/result
