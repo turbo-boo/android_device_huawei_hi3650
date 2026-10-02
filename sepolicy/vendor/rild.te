@@ -1,3 +1,4 @@
 allow rild config_prop:file { getattr open read };
 allow rild default_prop:file { getattr open read };
 allow rild system_prop:file { getattr open read };
+r_dir_file(rild, splash_data_file)

@@ -73,7 +73,7 @@ DEVICE_MATRIX_FILE := $(COMMON_PATH)/prebuilts/compatibility_matrix.xml
 # Kernel
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_BASE := 0x00478000
-BOARD_KERNEL_CMDLINE := loglevel=6 page_tracker=on slub_min_objects=12 unmovable_isolate1=2:192M,3:224M,4:256M androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := loglevel=6 page_tracker=on slub_min_objects=12 unmovable_isolate1=2:192M,3:224M,4:256M
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.super_partition=system
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x07b88000 --tags_offset 0x07588000

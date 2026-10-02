@@ -624,7 +624,6 @@ on charger
     write /sys/class/devfreq/ddrfreq_up_threshold/max_freq 1333000000
     write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 1333000000
     setprop sys.usb.configfs 0
-    setprop persist.sys.usb.config mass_storage
     class_start charger
     
 # Start service
