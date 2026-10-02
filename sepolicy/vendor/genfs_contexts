@@ -1,2 +1,4 @@
 # compat labels max_freq only; the pixel power HAL raises min_freq too
 genfscon sysfs /devices/platform/e8970000.mali/devfreq/gpufreq/min_freq u:object_r:sysfs_pg:s0
+# cyttsp5 easy wakeup gesture mask, written by the power HAL for DOUBLE_TAP_TO_WAKE
+genfscon sysfs /devices/platform/amba/ffd73000.i2c/i2c-0/0-0024/easy_wakeup_gesture u:object_r:sysfs_touchscreen:s0
