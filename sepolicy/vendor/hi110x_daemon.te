@@ -11,7 +11,7 @@ allow hi110x_daemon hi110x_dev:chr_file { getattr ioctl open read write };
 allow hi110x_daemon servicemanager:binder { call };
 allow hi110x_daemon sysfs:file { getattr open read write };
 allow hi110x_daemon sysfs_wake_lock:file { getattr open write };
-allow hi110x_daemon system_data_file:dir { add_name getattr open read remove_name write };
+allow hi110x_daemon system_data_file:dir { add_name create getattr open read remove_name write };
 allow hi110x_daemon system_data_file:file { append create getattr open rename unlink };
 allow hi110x_daemon vendor_data_file:dir { open read };
 allow hi110x_daemon vendor_data_file:file { append getattr open read setattr };

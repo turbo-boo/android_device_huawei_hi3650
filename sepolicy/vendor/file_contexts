@@ -1,2 +1,12 @@
 # Loaded into apps, SurfaceFlinger and system_server through the vendor graphics stack.
-/(vendor|system/vendor)/lib(64)?/libhwlog\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libhwlog\.so            u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.hi3650\.so  u:object_r:same_process_hal_file:s0
+
+# pixel power HAL (powerhint.json) holds a PM QoS request on it
+/dev/cpu_dma_latency      u:object_r:device_latency:s0
+
+# Root mount points from BOARD_ROOT_EXTRA_FOLDERS (btvdl09). compat 0d72728
+# dropped these labels; e2fsdroid cannot label the system image without them.
+/hw_odm(/.*)?             u:object_r:ncfg_nv_file:s0
+/3rdmodemnvm(/.*)?        u:object_r:modem_file:s0
+/3rdmodemnvmbkp(/.*)?     u:object_r:modem_file:s0

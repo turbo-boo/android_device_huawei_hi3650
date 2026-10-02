@@ -1,3 +1,5 @@
 allow hal_wifi_supplicant_default default_prop:file { getattr open read };
 allow hal_wifi_supplicant_default wifi_vendor_wpa_socket:dir { add_name setattr write };
 allow hal_wifi_supplicant_default wifi_vendor_wpa_socket:sock_file { create setattr };
+get_prop(hal_wifi_supplicant_default, vendor_oem_prop)
+get_prop(hal_wifi_supplicant_default, system_prop)

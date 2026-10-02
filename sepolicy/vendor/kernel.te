@@ -8,3 +8,14 @@ allow kernel sepolicy_file:file { getattr };
 allow kernel sysfs:file { open };
 allow kernel vendor_log_file:dir { getattr open read setattr };
 allow kernel vendor_log_file:file { append getattr open setattr };
+# bbox stats /data/lost+found; ISP firmware sits under a same_process_hal_file path
+allow kernel unlabeled:dir getattr;
+allow kernel same_process_hal_file:file { open read getattr };
+allow kernel modem_secure_device:blk_file { open read write };
+allow kernel modem_file:dir { add_name search write };
+allow kernel modem_file:file { append create open rename unlink write };
+allow kernel hisi_log_file:dir { getattr open read search setattr };
+allow kernel hisi_log_file:file { setattr };
+allow kernel oeminfo_nvm_block_device:blk_file { ioctl open read };
+allow kernel sysfs_power:dir { search };
+allow kernel sysfs_power:file { open read };

@@ -16,3 +16,5 @@ allow init teecd_data_file:dir { mounton };
 allow init teecd_data_file:filesystem { mount relabelfrom relabelto };
 allow init vendor_file:file { execute execute_no_trans };
 allow init vendor_toolbox_exec:file { execute_no_trans };
+allow init proc_hisi_board:file { getattr open read };
+allow init recovery_device:blk_file { relabelto };

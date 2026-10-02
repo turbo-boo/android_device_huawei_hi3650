@@ -1,0 +1,3 @@
+allow system_app sysfs_zram:file { getattr open read };
+allow system_app proc_pagetypeinfo:file { getattr open read };
+allow system_app hal_hisupl_hwservice:hwservice_manager { find };

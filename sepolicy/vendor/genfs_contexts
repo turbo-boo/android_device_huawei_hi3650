@@ -1,0 +1,2 @@
+# compat labels max_freq only; the pixel power HAL raises min_freq too
+genfscon sysfs /devices/platform/e8970000.mali/devfreq/gpufreq/min_freq u:object_r:sysfs_pg:s0

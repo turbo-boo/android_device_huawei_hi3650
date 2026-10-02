@@ -6,3 +6,4 @@ allow hal_fingerprint_default sysfs:file { write };
 allow hal_fingerprint_default tee:fd { use };
 allow hal_fingerprint_default tee:unix_stream_socket { connectto };
 allow hal_fingerprint_default teecd_device:chr_file { ioctl read write };
+allow hal_fingerprint_default system_data_file:dir { add_name create setattr write };

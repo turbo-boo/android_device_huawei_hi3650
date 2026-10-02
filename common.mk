@@ -355,6 +355,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/cfg_btv_wifi_only_hisi.ini:$(TARGET_COPY_OUT_VENDOR)/etc/cfg_btv_wifi_only_hisi.ini
     
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/resources/wifi/,$(TARGET_COPY_OUT_SYSTEM)/etc/wifi)
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/resources/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
     
 $(call inherit-product, vendor/huawei/hi3650/hi3650-vendor.mk)
