@@ -14,3 +14,4 @@ allow vendor_hisi_init vendor_bt_data_file:dir { search };
 allow vendor_hisi_init vendor_bt_data_file:file { getattr open write };
 allow vendor_hisi_init vendor_hisi_init:capability { dac_override };
 allow vendor_hisi_init wifi_vendor_data_file:file { getattr open write };
+allow vendor_hisi_init modem_secure_device:blk_file { getattr open read };
