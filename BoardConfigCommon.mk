@@ -127,15 +127,20 @@ BOARD_SUPER_PARTITION_METADATA_DEVICE := system
 
 BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 20971520 # 20MB
 BOARD_VENDORIMAGE_PARTITION_RESERVED_SIZE := 20971520 # 20MB
-# crDroid's system_ext/product are larger than LineageOS'; 640MB made the
-# dynamic partitions exceed the 3149922304-byte group.
-BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 536870912 # 512MB
-BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 94371840 # 90MB
-BOARD_ODM_EXTIMAGE_PARTITION_RESERVED_SIZE := 10485760 # 10MB
-# Reserved space alone leaves only ~6% spare inodes; MindTheGapps ran
-# system_ext out of inodes (400) and left GoogleServicesFramework empty.
+# product/system_ext use fixed sizes: with *_RESERVED_SIZE, build_image.py
+# trims the inode count to used + 0.2% regardless of *_EXTFS_INODE_COUNT,
+# and a sideloaded GApps then runs out of inodes (GSF apk left unwritten).
+# Budget (3004MB group): system 949 + vendor 390 + odm 63 + system_ext 560
+# + product 960 (vanilla, ~450MB free for sideloaded GApps) / 896 (GMS).
+ifeq ($(WITH_GMS),true)
+BOARD_PRODUCTIMAGE_PARTITION_SIZE := 939524096 # 896MB
+else
+BOARD_PRODUCTIMAGE_PARTITION_SIZE := 1006632960 # 960MB
+endif
+BOARD_SYSTEM_EXTIMAGE_PARTITION_SIZE := 587202560 # 560MB
 BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := 4096
 BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT := 2048
+BOARD_ODM_EXTIMAGE_PARTITION_RESERVED_SIZE := 10485760 # 10MB
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
