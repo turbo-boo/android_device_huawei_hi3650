@@ -2,6 +2,9 @@
 ro.audio.offload_wakelock=false
 ro.hardware.audio.primary=hisi_wrapper
 
+# Fingerprint
+ro.hardware.fingerprint=huawei_wrapper
+
 # BT
 bluetooth.device.default_name=Huawei MediaPad M3
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt

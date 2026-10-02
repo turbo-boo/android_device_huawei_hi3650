@@ -116,7 +116,8 @@ PRODUCT_PACKAGES += \
     
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.biometrics.fingerprint@2.1-service \
+    fingerprint.huawei_wrapper
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/native_packages.bin:$(TARGET_COPY_OUT_VENDOR)/etc/native_packages.bin
