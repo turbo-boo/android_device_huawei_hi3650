@@ -252,8 +252,12 @@ on property:sys.boot_completed=1
     write /sys/class/devfreq/gpufreq/mali_ondemand/hispeed_freq 650000000
     
     # lmkd sets adj/minfree from ActivityManager
-    # (config_lowMemoryKillerMinFreeKbytesAbsolute)
-    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 0
+    # (config_lowMemoryKillerMinFreeKbytesAbsolute). Those levels are low so
+    # cached apps survive; without the adaptive path nothing is killed while
+    # zram thrashes with page cache still above minfree. At vmpressure >= 95
+    # (or >= 90 with file cache < 315MB) kill adj > adj_max_shift (353).
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 80640
+    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
 
     write /proc/sys/kernel/sched_util_clamp_min 128
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 96
