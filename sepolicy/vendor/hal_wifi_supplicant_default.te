@@ -3,3 +3,6 @@ allow hal_wifi_supplicant_default wifi_vendor_wpa_socket:dir { add_name setattr 
 allow hal_wifi_supplicant_default wifi_vendor_wpa_socket:sock_file { create setattr };
 get_prop(hal_wifi_supplicant_default, vendor_oem_prop)
 get_prop(hal_wifi_supplicant_default, system_prop)
+# wpa_supplicant_hisi seeds /data/vendor/wifi/wpa/*.conf from the templates
+# it hardcodes under /system/etc/wifi on first start
+allow hal_wifi_supplicant_default system_file:file r_file_perms;
