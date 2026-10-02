@@ -136,9 +136,6 @@
     <!-- Disable lockscreen rotation by default -->
     <bool name="config_enableLockScreenRotation">true</bool>
 
-    <!-- Double tap on the touchscreen wakes the device (cyttsp5 easy wakeup) -->
-    <bool name="config_supportDoubleTapWake">true</bool>
-
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
