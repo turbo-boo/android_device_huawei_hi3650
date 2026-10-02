@@ -156,9 +156,10 @@
     <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Minfree for the cached-app level of the in-kernel lowmemorykiller.
-         The AOSP default (~325MB) is sized for PSI-driven lmkd; with the
-         4.4 in-kernel LMK it kills every cached app as soon as page cache
-         dips under it, long before zram is used. Lower levels scale down
-         proportionally. -->
-    <integer name="config_lowMemoryKillerMinFreeKbytesAbsolute">184320</integer>
+         The AOSP default (~325MB) is sized for PSI-driven lmkd. 180MB kept
+         cached apps alive without GMS, but with GMS the working set no
+         longer fits: page cache sat at 180-300MB and every app refaulted its
+         code from eMMC (~800 major faults/s). 300MB keeps ~600MB available.
+         Lower levels scale proportionally. -->
+    <integer name="config_lowMemoryKillerMinFreeKbytesAbsolute">307200</integer>
 </resources>
