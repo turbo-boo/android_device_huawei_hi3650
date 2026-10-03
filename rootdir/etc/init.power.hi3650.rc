@@ -164,6 +164,11 @@ on init
     chmod 0664 /sys/devices/virtual/thermal/thermal_zone0/trip_point_1_temp
     chown system system /sys/devices/virtual/thermal/thermal_zone0/type
     chmod 0440 /sys/devices/virtual/thermal/thermal_zone0/type
+    # IPA (power_allocator) sizes each actor's budget from its instantaneous
+    # load. From the 55C switch-on, a GPU idle between frames got ~0 power and
+    # was capped to 120MHz every other sample (thermal-devfreq 0<->6) while
+    # the SoC was ~65C, far below the 80C control temp. Start IPA at 72C.
+    write /sys/devices/virtual/thermal/thermal_zone0/trip_point_0_temp 72000
     
     chown system system /sys/devices/virtual/thermal/thermal_zone1/boost
     chmod 660 /sys/devices/virtual/thermal/thermal_zone1/boost
