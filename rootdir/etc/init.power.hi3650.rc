@@ -169,6 +169,12 @@ on init
     # was capped to 120MHz every other sample (thermal-devfreq 0<->6) while
     # the SoC was ~65C, far below the 80C control temp. Start IPA at 72C.
     write /sys/devices/virtual/thermal/thermal_zone0/trip_point_0_temp 72000
+    # Equal actor weights let IPA take the budget out of the GPU first in
+    # games (GPU <650MHz in 12/120 samples at 73C). Favour the GPU; the
+    # CPU clusters absorb the cut instead. cdev0 = thermal-devfreq-0 (DT order).
+    write /sys/devices/virtual/thermal/thermal_zone0/cdev0_weight 1024
+    write /sys/devices/virtual/thermal/thermal_zone0/cdev1_weight 256
+    write /sys/devices/virtual/thermal/thermal_zone0/cdev2_weight 256
     
     chown system system /sys/devices/virtual/thermal/thermal_zone1/boost
     chmod 660 /sys/devices/virtual/thermal/thermal_zone1/boost
