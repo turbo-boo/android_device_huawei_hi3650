@@ -261,8 +261,9 @@ on property:sys.boot_completed=1
     # Keep boot-time prefetch large; limit steady-state file-cache refaults.
     write /sys/block/mmcblk0/bdi/read_ahead_kb 128
 
-    # GPU enable animation_boost
-    write /sys/class/devfreq/gpufreq/mali_ondemand/animation_boost 1
+    # Scale down between frames instead of forcing a permanent 650MHz floor.
+    # Keep hispeed and compute boosts for active GPU work.
+    write /sys/class/devfreq/gpufreq/mali_ondemand/animation_boost 0
     write /sys/class/devfreq/gpufreq/mali_ondemand/animation_boost_freq 650000000
     write /sys/class/devfreq/gpufreq/mali_ondemand/cl_boost_freq 650000000
     write /sys/class/devfreq/gpufreq/mali_ondemand/hispeed_freq 650000000
@@ -289,7 +290,7 @@ on property:sys.boot_completed=1
     write /dev/cpuset/foreground/uclamp.latency_sensitive 0
 
     write /dev/cpuset/background/uclamp.max "max"
-    write /dev/cpuset/background/uclamp.min 20
+    write /dev/cpuset/background/uclamp.min 0
     write /dev/cpuset/background/uclamp.boosted 0
     write /dev/cpuset/background/uclamp.latency_sensitive 0
 
