@@ -258,6 +258,9 @@ on init
     chmod 0644 /dev/blkio/top-app/tasks
     
 on property:sys.boot_completed=1
+    # Keep boot-time prefetch large; limit steady-state file-cache refaults.
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 128
+
     # GPU enable animation_boost
     write /sys/class/devfreq/gpufreq/mali_ondemand/animation_boost 1
     write /sys/class/devfreq/gpufreq/mali_ondemand/animation_boost_freq 650000000
