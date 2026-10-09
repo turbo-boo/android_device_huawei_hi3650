@@ -1,0 +1,21 @@
+//
+// Copyright (C) 2026 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "camera.huawei_wrapper",
+    relative_install_path: "hw",
+    vendor: true,
+    compile_multilib: "64",
+    srcs: ["camera_wrapper.c"],
+    c_std: "gnu11",
+    header_libs: ["libhardware_headers"],
+    shared_libs: [
+        "libcamera_metadata",
+        "libdl",
+        "liblog",
+    ],
+    cflags: ["-Wall", "-Werror"],
+}
