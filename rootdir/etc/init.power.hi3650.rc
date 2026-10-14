@@ -276,6 +276,11 @@ on property:sys.boot_completed=1
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 80640
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
 
+    # Swap previous and cached apps (adj >= 700) to zram before LMK kills
+    # them; lower adj would also swap out the launcher and services.
+    write /sys/module/process_reclaim/parameters/min_score_adj 700
+    write /sys/module/process_reclaim/parameters/enable_process_reclaim 1
+
     write /proc/sys/kernel/sched_util_clamp_min 128
     write /proc/sys/kernel/sched_util_clamp_min_rt_default 96
 
