@@ -1,5 +1,8 @@
 on init
     setprop sys.usb.configfs 1
+    # Recovery cannot read the adb keys (/data stays encrypted) and has no
+    # authorization prompt, so allow adb without it (debuggable builds only).
+    setprop ro.adb.secure.recovery 0
 
 on property:sys.usb.config=adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/UDC "none"
